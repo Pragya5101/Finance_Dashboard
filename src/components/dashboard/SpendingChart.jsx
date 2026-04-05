@@ -34,7 +34,7 @@ export default function SpendingChart() {
         <p className="text-sm text-slate-500 dark:text-slate-400">Where your money goes</p>
       </div>
       
-      <div className="flex-1 min-h-[250px]">
+      <div className="h-[300px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie

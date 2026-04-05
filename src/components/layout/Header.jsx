@@ -1,14 +1,20 @@
 import React from 'react';
-import { Bell, Search, User, Moon, Sun } from 'lucide-react';
+import { Bell, Search, User, Moon, Sun, Menu } from 'lucide-react';
 import useFinanceStore from '../../store/useFinanceStore';
 
-export default function Header() {
+export default function Header({ setIsMobileMenuOpen }) {
   const { role, setRole, theme, toggleTheme } = useFinanceStore();
 
   return (
-    <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 h-20 px-6 flex items-center justify-between sticky top-0 z-10 transition-colors">
-      <div className="flex-1 flex items-center gap-4">
-        <div className="relative w-full max-w-md hidden sm:block">
+    <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 h-20 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-10 transition-colors">
+      <div className="flex-1 flex items-center gap-3 sm:gap-4">
+        <button 
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="md:hidden p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+        >
+          <Menu size={24} />
+        </button>
+        <div className="relative w-full max-w-md hidden md:block">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
           <input 
             type="text" 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Receipt, LineChart, Wallet } from 'lucide-react';
+import { LayoutDashboard, Receipt, LineChart, Wallet, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
@@ -8,14 +8,25 @@ const navItems = [
   { id: 'insights', label: 'Insights', icon: LineChart },
 ];
 
-export default function Sidebar({ currentView, setCurrentView }) {
+export default function Sidebar({ currentView, setCurrentView, isOpen, setIsOpen }) {
   return (
-    <aside className="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-screen hidden md:flex flex-col sticky top-0 transition-colors">
-      <div className="p-6 flex items-center gap-3">
-        <div className="bg-indigo-600 dark:bg-indigo-500 p-2 rounded-xl text-white">
-          <Wallet size={24} />
+    <aside className={cn(
+      "w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-screen flex flex-col fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0",
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    )}>
+      <div className="p-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="bg-indigo-600 dark:bg-indigo-500 p-2 rounded-xl text-white">
+            <Wallet size={24} />
+          </div>
+          <span className="text-xl font-bold text-slate-800 dark:text-slate-100">FinBoard</span>
         </div>
-        <span className="text-xl font-bold text-slate-800 dark:text-slate-100">FinBoard</span>
+        <button 
+          onClick={() => setIsOpen(false)}
+          className="md:hidden p-2 -mr-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+        >
+          <X size={20} />
+        </button>
       </div>
       
       <nav className="flex-1 px-4 mt-6 space-y-2">
@@ -25,7 +36,10 @@ export default function Sidebar({ currentView, setCurrentView }) {
           return (
             <button
               key={item.id}
-              onClick={() => setCurrentView(item.id)}
+              onClick={() => {
+                setCurrentView(item.id);
+                if(setIsOpen) setIsOpen(false);
+              }}
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium text-sm",
                 isActive 
