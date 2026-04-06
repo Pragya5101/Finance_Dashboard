@@ -121,7 +121,7 @@ export default function TransactionsView() {
         <div className="p-4 sm:p-6 border-b border-zinc-100 dark:border-zinc-700 flex flex-col gap-4">
           <div className="flex flex-col lg:flex-row gap-4 justify-between">
             <div className="relative w-full lg:max-w-md">
-              <Search className="absolute left-3 top-1/2 -tranzinc-y-1/2 text-zinc-400" size={18} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
               <input
                 type="text"
                 placeholder="Search by description or category..."

@@ -46,7 +46,7 @@ export default function Header({ setIsMobileMenuOpen }) {
 
         <div className="flex items-center gap-3 border-l border-zinc-200 pl-4 sm:pl-6">
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-200">Astha Kumari</p>
+            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-200">Pragya Kumari</p>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 capitalize">{role}</p>
           </div>
           <div className="w-10 h-10 bg-violet-100 rounded-full flex items-center justify-center text-violet-700">

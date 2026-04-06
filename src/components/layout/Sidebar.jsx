@@ -11,8 +11,8 @@ const navItems = [
 export default function Sidebar({ currentView, setCurrentView, isOpen, setIsOpen }) {
   return (
     <aside className={cn(
-      "w-64 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 h-screen flex flex-col fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out md:relative md:tranzinc-x-0 group",
-      isOpen ? "tranzinc-x-0" : "-tranzinc-x-full"
+      "w-64 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 h-screen flex flex-col fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 group",
+      isOpen ? "translate-x-0" : "-translate-x-full"
     )}>
       <div className="p-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
