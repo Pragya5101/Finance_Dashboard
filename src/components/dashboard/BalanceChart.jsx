@@ -38,10 +38,10 @@ export default function BalanceChart() {
   }, [transactions]);
 
   return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex-1 transition-colors">
+    <div className="bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl p-6 rounded-[2rem] border border-zinc-200/50 dark:border-white/10 shadow-xl shadow-black/5 flex-1 transition-colors">
       <div className="mb-6">
-        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">Balance Trend</h3>
-        <p className="text-sm text-slate-500 dark:text-slate-400">Your total balance history over the last 7 days</p>
+        <h3 className="text-lg font-bold text-zinc-800 dark:text-zinc-100">Balance Trend</h3>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">Your total balance history over the last 7 days</p>
       </div>
       
       <div className="h-[300px] w-full">

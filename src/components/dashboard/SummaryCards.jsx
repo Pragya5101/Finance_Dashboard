@@ -49,26 +49,26 @@ export default function SummaryCards() {
         const Icon = card.icon;
         
         return (
-          <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+          <div key={index} className="bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl p-6 rounded-[2rem] border border-zinc-200/50 dark:border-white/10 shadow-xl shadow-black/5 hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-4">
               <div className={cn(
-                "p-3 rounded-xl",
-                card.color === 'indigo' && "bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400",
-                card.color === 'emerald' && "bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400",
-                card.color === 'rose' && "bg-rose-50 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400",
+                "p-3 rounded-2xl",
+                card.color === 'indigo' && "bg-violet-50 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400",
+                card.color === 'emerald' && "bg-teal-50 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400",
+                card.color === 'rose' && "bg-orange-50 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400",
               )}>
                 <Icon size={24} />
               </div>
               <span className={cn(
                 "text-sm font-medium flex items-center px-2 py-1 rounded-full",
-                card.isPositive ? "bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400" : "bg-rose-50 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400"
+                card.isPositive ? "bg-teal-50 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400" : "bg-orange-50 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400"
               )}>
                 {card.trend}
               </span>
             </div>
             <div>
-              <p className="text-slate-500 dark:text-slate-400 font-medium text-sm mb-1">{card.title}</p>
-              <h3 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
+              <p className="text-zinc-500 dark:text-zinc-400 font-medium text-sm mb-1">{card.title}</p>
+              <h3 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100">
                 ${card.amount.toLocaleString('en-US', { minimumFractionDigits: 2 })}
               </h3>
             </div>

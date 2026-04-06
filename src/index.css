@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-slate-50 text-slate-900;
+    @apply antialiased bg-zinc-50 text-zinc-900;
   }
 }
 
@@ -21,9 +21,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-200 rounded-full;
+  @apply bg-zinc-200 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-300;
+  @apply bg-zinc-300;
 }
